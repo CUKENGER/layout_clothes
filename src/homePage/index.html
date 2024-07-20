@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="css/blocks/header.css">
+  <link rel="stylesheet" href="css/blocks/hero.css">
+  <link rel="stylesheet" href="css/blocks/logos.css">
+  <link rel="stylesheet" href="css/blocks/novelty.css">
+  <link rel="stylesheet" href="css/blocks/actual.css">
+  <link rel="stylesheet" href="css/blocks/about.css">
+  <link rel="stylesheet" href="css/blocks/footer.css">
+  <link rel="stylesheet" href="css/blocks/modal.css">
+  <link rel="stylesheet" href="css/blocks/menu.css">
+</head>
+<body>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+  </style>
+  <div id="modal" class="modal">
+    <div class="modal_img_container">
+      <img class="modal_img" src="assets/modal_img.png" alt="model">
+    </div>
+    <div class="modal_form_container">
+      <div class="closeModal">
+        <img id="closeModal" class="closeModal_icon" src="assets/modal_close.svg" alt="close">
+      </div>
+
+      <div class="modal_box">
+        <div class="modal_content">
+          <p class="lk_title">личный кабинет</p>
+          <div class="modal_logo_box">
+            <img class="modal_logo" src="assets/logo_icon.svg" alt="logo">
+          </div>
+          <form id="loginForm" class="form">
+            <input id="email" class="form_input" type="text" placeholder="Введите логин или e-mail">
+            <p class="email_error">Неверно введен email</p>
+            <div class="form_password_box">
+              <input id="password" class="form_input form_password" type="password" placeholder="Введите пароль">
+              <span id="togglePassword" class="pass_vis"><img src="assets/pass_visibility.svg" alt="password visibility"></span>
+            </div>
+            <div class="form_actions">
+            
+              <label class="custom-checkbox">
+                <input type="checkbox" id="checkbox">
+                <span class="checkmark"></span>
+                Запомнить меня
+              </label>
+
+              <div class="form_forgot_box">
+                <p class="form_forgot_text">Забыли пароль?</p>
+              </div>
+
+            </div>
+            <button class="form_btn">
+              Войти
+            </button>
+            <div class="text-with-lines">
+              <p class="text_with_lines">ИЛИ</p>
+            </div>
+            <div class="alt_way">
+              <a href="#">
+                <img class="alt_way_icon" src="assets/apple.png" alt="apple">
+              </a>
+              <a href="#">
+                <img class="alt_way_icon" src="assets/google.png" alt="google">
+              </a>
+              <a href="#">
+                <img class="alt_way_icon" src="assets/fb.png" alt="facebook">
+              </a>
+            </div>
+
+            <div class="first_time">
+              <p class="first_question">Первый раз в O DA BRANDS?</p>
+              <p class="first_answer">Зарегистрируйтесь</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <header id="header" class="header">
+    <div class="wrapper header_wrapper">
+        <div class="menu">
+          <span class="menu-btn"></span>
+        </div>
+      <div class="logo">
+        <a href="/src/homePage/index.html"><img class="logo_icon" src="assets/logo_icon.svg" alt="logo"></a>
+      </div>
+      <nav class="nav">
+        <ul class="nav_list">
+          <li class="nav_list_item">
+            <a href="#"><img class="nav_list_item_icon searchIcon" src="assets/search_icon.svg" alt="search"></a>
+          </li>
+          <li class="nav_list_item">
+            <a id="openReg" href="#"><img class="nav_list_item_icon" src="assets/account_icon.svg" alt="account"></a>
+          </li>
+          <li class="nav_list_item">
+            <a href="#"><img class="nav_list_item_icon" src="assets/favorite_icon.svg" alt="favotite"></a>
+          </li>
+          <li class="nav_list_item">
+            <a href="#"><img class="nav_list_item_icon" src="assets/cart_icon.svg" alt="cart"></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="input_box">
+      <input id="searchInput" class="input" type="text" placeholder="Поиск">
+      <img class="input_box_search_icon" src="assets/input_search_icon.svg" alt="search">
+      <img id="clearIcon" class="input_box_search_close" src="assets/input_close.svg" alt="close">
+    </div> 
+  </header>
+  <div class="menu_box">
+    член
+  </div>
+
+  <main class="main">
+    <button id="scrollButton">
+      <img src="assets/scrollBtn.svg" alt="scrollBtn">
+    </button>
+    <button class="subscribe_btn">
+      <img class="subscribe_icon" src="assets/newsletter_mail_icon.svg" alt="mail">
+      <p class="subscribe_title">подписаться</p>
+      <p class="subscribe_text">на рассылку</p>
+    </button>
+    <section class="hero">
+    </section>
+    <section class="logos">
+      <div class="logo_item">
+        <a href="#"><img class="logo_img" src="assets/monochrome.png" alt="monochrome"></a>
+      </div>
+      <div class="logo_item">
+        <a href="#"><img class="logo_img" src="assets/n97.png" alt="n97"></a>
+      </div>
+      <div class="logo_item">
+        <a href="#"><img class="logo_img" src="assets/autentiments.png" alt="autentiments"></a>
+      </div>
+      <div class="logo_item">
+        <a href="#"><img class="logo_img" src="assets/choux.png" alt="choux"></a>
+      </div>
+      <div class="logo_item">
+        <a href="#"><img class="logo_img" src="assets/rizzle.png" alt="rizzle"></a>
+      </div>
+      <div class="logo_item">
+        <a href="#"><img class="logo_img" src="assets/nikonorova.png" alt="autentiments"></a>
+      </div>
+      <div class="logo_item">
+        <a href="#"><img class="logo_img" src="assets/monochrome.png" alt="n97"></a>
+      </div>
+      <div class="logo_item">
+        <a href="#"><img class="logo_img" src="assets/rizzle.png" alt="rizzle"></a>
+      </div>
+      <div class="logo_item">
+        <a href="#"><img class="logo_img" src="assets/n97.png" alt="n97"></a>
+      </div>
+      <div class="logo_item">
+        <a href="#"><img class="logo_img" src="assets/monochrome.png" alt="n97"></a>
+      </div>
+      
+    </section>
+
+    <section class="novelty">
+      <div class="wrapper novelty_wrapper">
+        <div class="novelty_title_box">
+          <h1 class="title novelty_title">новинки</h1>
+          <a class="novelty_link" href="#">Смотреть все</a>
+        </div>
+        <div class="novelty_slide">
+          <div class="dots">
+            <img class="dot" src="assets/unfill_dot.svg" alt="dot">
+            <img class="dot" src="assets/fill_dot.svg" alt="dot">
+            <img class="dot" src="assets/unfill_dot.svg" alt="dot">
+          </div>
+          <div class="novelty_arrows">
+            <div>
+              <img class="arrow arrow--left" src="assets/slide_arrow.jpg" alt="arrow">
+            </div>
+            <div>
+              <img class="arrow arrow--right" src="assets/slide_arrow.jpg" alt="arrow">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrapper novelty_img_wrapper">
+        <div class="slide">
+          <img class="novelty_img" src="assets/novelty_img.png" alt="product">
+          <img class="novelty_img" src="assets/novelty_img1.png" alt="product">
+          <img class="novelty_img" src="assets/novelty_img2.png" alt="product">
+          <img class="novelty_img" src="assets/novelty_img3.png" alt="product">
+        </div>
+        <div class="slide">
+          <img class="novelty_img" src="assets/novelty_img3.png" alt="product">
+          <img class="novelty_img" src="assets/novelty_img2.png" alt="product">
+          <img class="novelty_img" src="assets/novelty_img1.png" alt="product">
+          <img class="novelty_img" src="assets/novelty_img3.png" alt="product">
+        </div>
+        <div class="slide">
+          <img class="novelty_img" src="assets/novelty_img2.png" alt="product">
+          <img class="novelty_img" src="assets/novelty_img3.png" alt="product">
+          <img class="novelty_img" src="assets/novelty_img1.png" alt="product">
+          <img class="novelty_img" src="assets/novelty_img3.png" alt="product">
+        </div>
+      </div>
+      <div class="novelty_slide--mobile">
+        <div class="dots">
+          <img class="dot dot--mobile" src="assets/unfill_dot.svg" alt="dot">
+          <img class="dot dot--mobile" src="assets/fill_dot.svg" alt="dot">
+          <img class="dot dot--mobile" src="assets/unfill_dot.svg" alt="dot">
+        </div>
+        <div class="novelty_arrows">
+          <div>
+            <img class="arrow arrow--left" src="assets/slide_arrow.jpg" alt="arrow">
+          </div>
+          <div>
+            <img class="arrow arrow--right" src="assets/slide_arrow.jpg" alt="arrow">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="actual">
+      <div class="wrapper actual_wrapper">
+        <div class="actual_header">
+          <h1 class="title actual_title actual_title--active">актуальное</h1>
+          <h1 class="title actual_title">подборки</h1>
+          <h1 class="title actual_title">коллекции</h1>
+        </div>
+        <div class="categories categories--active">
+          <div class="photo_container photo_container1">
+            <a href="#"> 
+              <img class="photo" src="assets/t-shirts.png" alt="category">
+            </a>
+          </div>
+          <div class="photo_container photo_container2">
+            <a href="#"> 
+              <img class="photo" src="assets/decorations.png" alt="category">
+            </a>
+          </div>
+          <div class="photo_container photo_container3">
+            <a href="#"> 
+              <img class="photo" src="assets/swimwear.png" alt="category">
+            </a>
+          </div>
+          <div class="photo_container photo_container4">
+            <a href="#"> 
+              <img class="photo" src="assets/denim.png" alt="category">
+            </a>
+          </div>
+          <div class="photo_container photo_container5">
+            <a href="#"> 
+              <img class="photo" src="assets/dressed.png" alt="category">
+            </a>
+          </div>
+
+        </div>
+
+        <div class="categories">
+          
+          <div class="photo_container photo_container2">
+            <a href="#"> 
+              <img class="photo" src="assets/decorations.png" alt="category">
+            </a>
+          </div>
+          <div class="photo_container photo_container1">
+            <a href="#"> 
+              <img class="photo" src="assets/t-shirts.png" alt="category">
+            </a>
+          </div>
+          <div class="photo_container photo_container3">
+            <a href="#"> 
+              <img class="photo" src="assets/swimwear.png" alt="category">
+            </a>
+          </div>
+          <div class="photo_container photo_container4">
+            <a href="#"> 
+              <img class="photo" src="assets/denim.png" alt="category">
+            </a>
+          </div>
+          <div class="photo_container photo_container5">
+            <a href="#"> 
+              <img class="photo" src="assets/dressed.png" alt="category">
+            </a>
+          </div>
+
+        </div>
+
+        <div class="categories">
+          
+          <div class="photo_container photo_container2">
+            <a href="#"> 
+              <img class="photo" src="assets/decorations.png" alt="category">
+            </a>
+          </div>
+          <div class="photo_container photo_container1">
+            <a href="#"> 
+              <img class="photo" src="assets/t-shirts.png" alt="category">
+            </a>
+          </div>
+          <div class="photo_container photo_container3">
+            <a href="#"> 
+              <img class="photo" src="assets/swimwear.png" alt="category">
+            </a>
+          </div>
+          <div class="photo_container photo_container4">
+            <a href="#"> 
+              <img class="photo" src="assets/denim.png" alt="category">
+            </a>
+          </div>
+          <div class="photo_container photo_container5">
+            <a href="#"> 
+              <img class="photo" src="assets/dressed.png" alt="category">
+            </a>
+          </div>
+
+        </div>
+        
+
+        <div class="category--disabled">
+          <a class="link1" href="#"><img class="photo4" src="assets/denim.png" alt="denim"></a>
+          <a class="link2" href="#"><img class="photo1" src="assets/swimwear.png" alt="t-shirts"></a>
+          <a class="link3" href="#"><img class="photo2" src="assets/dressed.png" alt="decorations"></a>
+          <a class="link4" href="#"><img class="photo5" src="assets/dressed.png" alt="dressed"></a>
+          <a class="link5" href="#"><img class="photo3" src="assets/t-shirts.png" alt="swimwear"></a>
+          <a class="link6" href="#"><img class="photo2" src="assets/denim.png" alt="decorations"></a>
+          <a class="link7" href="#"><img class="photo5" src="assets/dressed.png" alt="dressed"></a>
+          <a class="link8" href="#"><img class="photo3" src="assets/t-shirts.png" alt="swimwear"></a>
+        </div>
+        <div>
+          <button class="actual_btn">СМОТРЕТЬ ВСЕ</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="about_content">
+        <h1 class="title about_title">O DA BRANdS FRIENDS</h1>
+        <p class="about_text">Больше покупок, больше скидки!</p>
+        <button class="about_btn">Вступить в сообщество</button>
+      </div>
+    </section>
+
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrapper footer_wrapper">
+      <div class="newsletter">
+        <div class="newsletter_box">
+          <img src="assets/newsletter_mail_icon.svg" alt="mail">
+          <h1 class="newsletter_title">подписаться</h1>
+          <p class="newsletter_text">на рассылку</p>
+        </div>
+      </div>
+      <div class="footer_uppper">
+        <ul class="footer_list">
+          <a href="#"><li class="footer_list_item">контакты</li></a>
+          <a href="#"><li class="footer_list_item">оплата и доставка</li></a>
+          <a href="#"><li class="footer_list_item">о нас</li></a>
+          <a href="#"><li class="footer_list_item">возврат</li></a>
+          <a href="#"><li class="footer_list_item">программы лояльности</li></a>
+        </ul>
+        <ul class="footer_list--mobile">
+          <div class="footer_list_upper--mobile">
+            <a href="#"><li class="footer_list_item">контакты</li></a>
+            <a href="#"><li class="footer_list_item">о нас</li></a>
+            <a href="#"><li class="footer_list_item">возврат</li></a>
+          </div>
+          
+          <div>
+            <a href="#"><li class="footer_list_item">программы лояльности</li></a>
+          </div>
+          <div>
+            <a href="#"><li class="footer_list_item">оплата и доставка</li></a>
+          </div>
+
+          <div class="socials--mobile">
+            <a href="#"><img src="assets/tg_icon.svg" alt="tg"></a>
+            <a href="#"><img src="assets/whasup_icon.svg" alt="whatsApp"></a>
+          </div>
+          
+          
+        </ul>
+      </div>
+      <div class="footer_down">
+        <div class="copyright">2024 © O DA BRANDS</div>
+        <div class="socials">
+          <a href="#"><img src="assets/tg_icon.svg" alt="tg"></a>
+          <a href="#"><img src="assets/whasup_icon.svg" alt="whatsApp"></a>
+        </div>
+        <a href="#"><div class="documents">Документы</div></a>
+      </div>
+    </div>
+  </footer>
+  <script src="./js/main.js"></script>
+  <script src="./js/actual_slider.js"></script>
+  <script src="./js/modalLK.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+.logos {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.logo_item {
+  padding: 25px 0;
+  flex: 0 0 200px;
+  margin-right: 20px;
+}

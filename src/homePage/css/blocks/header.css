@@ -1,0 +1,242 @@
+
+.header{
+  position: fixed;
+  z-index: 1000;
+  background-color: white;
+  width: 100%;
+  transition: box-shadow 0.3s;
+}
+
+.header.scrolled{
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.logo {
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.menu_click{
+  width: 50px;
+  display: block;
+  height: 100%;
+  cursor: pointer;
+}
+
+.menu,
+.nav {
+  flex-basis: auto;
+  width: 180px;
+}
+
+.menu{
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.nav_list {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  justify-content: flex-end;
+}
+
+.nav_list_item{
+  cursor: pointer;
+}
+
+.input_box{
+  display: none;
+  border: 1px solid transparent;
+  position: relative;
+  width: 100%;
+}
+
+.input_box--active{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5px;
+  padding-top: 0;
+  position: relative;
+  padding: 10px 300px;
+}
+
+.input{
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgb(211 211 211);
+  border-radius: 3px;
+  padding: 3px 27px;
+  font-family: 'Istok Web';
+  font-size: 14px;
+}
+
+.input:focus-visible{
+  border-bottom: 1px solid rgb(211 211 211);
+}
+
+.input_box_search_icon {
+  position: absolute; 
+  top: 50%;
+  left: 305px; 
+  transform: translateY(-50%); 
+  width: 20px; 
+  height: auto;
+  cursor: pointer;
+}
+
+.input_box_search_close{
+  position: absolute; 
+  top: 50%;
+  right: 305px; 
+  transform: translateY(-50%); 
+  width: 20px; 
+  height: auto;
+  cursor: pointer;
+}
+
+
+.menu-btn {
+  display: block;
+  position: relative;
+  width: 30px;
+  height: 3px;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(45deg, #1C1B1F 0%, #1C1B1F 100%);
+  transition: all .6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  cursor: pointer;
+}
+
+.menu-btn:hover:not(.open) {
+  width: 30px;
+}
+
+.menu-btn:hover:before, .menu-btn:hover:after {
+  width: 30px;
+}
+
+.menu-btn:before, .menu-btn:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 3px;
+  left: 0;
+  background: linear-gradient(45deg, #1C1B1F 0%, #1C1B1F 100%);
+  transition: all .5s;
+}
+
+.menu-btn:before{
+  width: 40px;
+}
+
+.menu-btn:before {
+  top: -9px;
+}
+
+.menu-btn:after {
+  top: 9px;
+}
+
+.menu-btn.open {
+  transform: translate(-50%, -50%) rotate(225deg);
+}
+
+.menu-btn.open:before, .menu-btn.open:after {
+  top: 0px;
+}
+
+.menu-btn.open:after {
+  transform: rotate(90deg);
+  width: 30px;
+}
+
+
+
+@media(max-width:720px) {
+  .logo{
+    margin: 0;
+  }
+
+  .menu{
+    width: 40px;
+  }
+
+  .nav {
+    flex-basis:content;
+    width:fit-content;
+  }
+
+  .menu-btn{
+    left: 60%;
+  }
+}
+
+@media(max-width:470px) {
+  .logo{
+    width: 150px;
+    height: auto;
+  }
+
+  .nav_list_item_icon{
+    width: 25px;
+    height: auto;
+  }
+
+  .nav_list{
+    column-gap: 15px;
+  }
+}
+
+@media (max-width:446px) {
+
+  .logo_icon{
+    width: 100%;
+    height: auto;
+  }
+
+  .nav_list{
+    column-gap: 10px;
+  }
+}
+
+@media(max-width:370px) {
+
+  .nav_list{
+    column-gap: 5px;
+  }
+  .logo{
+    width: 130px;
+  }
+
+  .nav_list_item_icon{
+    width: 20px;
+  }
+
+  .menu-btn:before{
+    width:30px;
+    top: -5px;
+    height: 2px;
+  }
+
+  .menu-btn::after{
+    top: 5px;
+  }
+
+  .menu-btn,
+  .menu-btn:after{
+    width: 20px;
+    height: 2px;
+  }
+}
