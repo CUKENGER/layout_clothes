@@ -1,3 +1,4 @@
+
 // logos slide
 const container = document.querySelector('.logos');
 let isDown = false; 
@@ -22,27 +23,29 @@ container.addEventListener('touchmove', (event) => {
   container.scrollLeft = scrollLeft - walk; 
 });
 
-// container.addEventListener('mousedown', (event) => {
-//   isDown = true; 
-//   startX = event.pageX - container.offsetLeft; 
-//   scrollLeft = container.scrollLeft; 
-// });
+container.addEventListener('mousedown', (event) => {
+  if (event.button !== 0) return; // Проверяем, что нажата левая кнопка мыши
+  isDown = true; 
+  startX = event.pageX - container.offsetLeft; 
+  scrollLeft = container.scrollLeft; 
+});
 
-// container.addEventListener('mouseleave', () => {
-//   isDown = false; 
-// });
+container.addEventListener('mouseleave', () => {
+  isDown = false; 
+});
 
-// container.addEventListener('mouseup', () => {
-//   isDown = false; 
-// });
+container.addEventListener('mouseup', () => {
+  isDown = false; 
+});
 
-// container.addEventListener('mousemove', (event) => {
-//   if (!isDown) return; 
-//   event.preventDefault(); 
-//   const x = event.pageX - container.offsetLeft; 
-//   const walk = (x - startX) * 2; 
-//   container.scrollLeft = scrollLeft - walk; 
-// });
+container.addEventListener('mousemove', (event) => {
+  if (!isDown) return; 
+  event.preventDefault(); 
+  const x = event.pageX - container.offsetLeft; 
+  const walk = (x - startX) * 2; 
+  container.scrollLeft = scrollLeft - walk; 
+});
+
 
 container.addEventListener('wheel', (event) => {
   event.preventDefault();
@@ -52,55 +55,55 @@ container.addEventListener('wheel', (event) => {
 
 
 // novelty_slider
-const dots = document.querySelectorAll('.dot')
-const dotsMobile = document.querySelectorAll('.dot--mobile')
-const arrows = document.querySelectorAll('.arrow')
-const slides = document.querySelectorAll('.slide')
-const activeSlide = document.querySelector('.slide--active')
+// const dots = document.querySelectorAll('.dot')
+// const dotsMobile = document.querySelectorAll('.dot--mobile')
+// const arrows = document.querySelectorAll('.arrow')
+// const slides = document.querySelectorAll('.slide')
+// const activeSlide = document.querySelector('.slide--active')
 
-let currentSlide = 0
+// let currentSlide = 0
 
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.toggle('slide--active', i===index)
-    slide.classList.toggle('slide', i!==index)
-  })
+// function showSlide(index) {
+//   slides.forEach((slide, i) => {
+//     slide.classList.toggle('slide--active', i===index)
+//     slide.classList.toggle('slide', i!==index)
+//   })
 
-  dots.forEach((dot, i) => {
-    dot.src = i === index ? "assets/fill_dot.svg" : "assets/unfill_dot.svg"
-  })
+//   dots.forEach((dot, i) => {
+//     dot.src = i === index ? "assets/fill_dot.svg" : "assets/unfill_dot.svg"
+//   })
 
-  dotsMobile.forEach((dot, i) => {
-    dot.src = i === index ? "assets/fill_dot.svg" : "assets/unfill_dot.svg"
-  })
-}
+//   dotsMobile.forEach((dot, i) => {
+//     dot.src = i === index ? "assets/fill_dot.svg" : "assets/unfill_dot.svg"
+//   })
+// }
 
-dots.forEach((dot, i) => {
-  dot.addEventListener('click', () => {
-    currentSlide = i
-    showSlide(currentSlide)
-  })
-})
+// dots.forEach((dot, i) => {
+//   dot.addEventListener('click', () => {
+//     currentSlide = i
+//     showSlide(currentSlide)
+//   })
+// })
 
-dotsMobile.forEach((dot, i) => {
-  dot.addEventListener('click', () => {
-    currentSlide = i
-    showSlide(currentSlide)
-  })
-})
+// dotsMobile.forEach((dot, i) => {
+//   dot.addEventListener('click', () => {
+//     currentSlide = i
+//     showSlide(currentSlide)
+//   })
+// })
 
-arrows.forEach((arrow, i) => {
-  arrow.addEventListener('click', () => {
-    if(arrow.classList.contains('arrow--left')) {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length
-    } else {
-      currentSlide = (currentSlide + 1) % slides.length
-    }
-    showSlide(currentSlide)
-  })
-})
+// arrows.forEach((arrow, i) => {
+//   arrow.addEventListener('click', () => {
+//     if(arrow.classList.contains('arrow--left')) {
+//       currentSlide = (currentSlide - 1 + slides.length) % slides.length
+//     } else {
+//       currentSlide = (currentSlide + 1) % slides.length
+//     }
+//     showSlide(currentSlide)
+//   })
+// })
 
-showSlide(currentSlide)
+// showSlide(currentSlide)
 
 
 
@@ -145,7 +148,7 @@ document.getElementById('clearIcon').addEventListener('click', function() {
 
 // scrollBtn
 document.getElementById('scrollButton').addEventListener('click', function() {
-  const scrollDistance = 2000; 
+  const scrollDistance = 3000; 
   const scrollY = window.scrollY; 
 
   if (scrollY + window.innerHeight >= document.body.offsetHeight - 10) {
@@ -158,6 +161,9 @@ document.getElementById('scrollButton').addEventListener('click', function() {
       top: scrollDistance,
       behavior: 'smooth'
     });
+    document.body.classList.remove('no-scroll');
+    menu.classList.remove('show'); // Используем toggle для добавления/удаления класса
+    menuBtn.classList.toggle('open');
   }
 });
 
@@ -177,11 +183,14 @@ window.addEventListener('scroll', function() {
 
 // menuBtn
 const menuBtn = document.querySelector('.menu-btn');
+const menuWrapper = document.querySelector('.menu-wrapper')
 const menu = document.querySelector('.menu_box');
 
-menuBtn.addEventListener('click', function() {
+menuWrapper.addEventListener('click', function() {
     menu.classList.toggle('show'); // Используем toggle для добавления/удаления класса
-    this.classList.toggle('open'); // Используем this для ссылки на кнопку меню
+    menuBtn.classList.toggle('open'); // Используем this для ссылки на кнопку меню
+    menuOpenHover.classList.remove('show')
+    // document.body.classList.toggle('no-scroll');
 });
 
 

@@ -17,12 +17,18 @@ document.getElementById('closeModal').addEventListener('click', function() {
 document.getElementById('togglePassword').addEventListener('click', function() {
   const passwordInput = document.getElementById('password');
   const toggleButton = this;
+  const toggleIcon = document.getElementById('toggle_icon')
 
   // Проверяем, скрыт ли текущий пароль
   if (passwordInput.type === 'password') {
       passwordInput.type = 'text';
+      toggleIcon.src = 'assets/visibility.svg'
+      toggleButton.style.top = '25%'
   } else {
       passwordInput.type = 'password';
+      toggleIcon.src = "assets/pass_visibility.svg"
+      toggleButton.style.top = '35%'
+
   }
 });
 

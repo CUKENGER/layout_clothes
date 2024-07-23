@@ -1,10 +1,10 @@
 
 
 .hero{
-  background-image: url('../../assets/hero_img.png');
+  background-image: url('../../assets/image\ 16.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 706px;
+  height: calc(100vh - 0px);
 }
 

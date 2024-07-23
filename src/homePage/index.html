@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home Page</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link rel="stylesheet" href="./css/main.css">
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="css/blocks/header.css">
@@ -15,6 +16,9 @@
   <link rel="stylesheet" href="css/blocks/footer.css">
   <link rel="stylesheet" href="css/blocks/modal.css">
   <link rel="stylesheet" href="css/blocks/menu.css">
+  <link rel="stylesheet" href="css/blocks/slider.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
   <style>
@@ -40,7 +44,7 @@
             <p class="email_error">Неверно введен email</p>
             <div class="form_password_box">
               <input id="password" class="form_input form_password" type="password" placeholder="Введите пароль">
-              <span id="togglePassword" class="pass_vis"><img src="assets/pass_visibility.svg" alt="password visibility"></span>
+              <span id="togglePassword" class="pass_vis"><img id="toggle_icon" src="assets/pass_visibility.svg" alt="password visibility"></span>
             </div>
             <div class="form_actions">
             
@@ -84,9 +88,14 @@
   </div>
   <header id="header" class="header">
     <div class="wrapper header_wrapper">
+      <div class="menu-wrapper">
+        
         <div class="menu">
           <span class="menu-btn"></span>
         </div>
+
+      </div>
+
       <div class="logo">
         <a href="/src/homePage/index.html"><img class="logo_icon" src="assets/logo_icon.svg" alt="logo"></a>
       </div>
@@ -114,7 +123,99 @@
     </div> 
   </header>
   <div class="menu_box">
-    член
+    <ul class="menu_list">
+      <li class="menu_item">Новинки</li>
+      <li data-menu-item="1" class="menu_item">
+        <div class="menu_item_content">
+          Бренды
+          <img class="menu_item_arrow" src="assets/arrow_forward_ios.svg" alt="arrow">
+          <img class="menu_item_arrow--mobile" src="assets/mobile_arrow.svg" alt="arrow">
+        </div>
+        
+      </li>
+      <div class="podmenu podmenu_brends">
+        <p class="podmenu_item">Choux</p>
+        <p class="podmenu_item">Rizzle</p>
+      </div>
+      <li data-menu-item="2" class="menu_item">
+        <div class="menu_item_content">
+          Одежда
+          <img class="menu_item_arrow" src="assets/arrow_forward_ios.svg" alt="arrow">
+          <img class="menu_item_arrow--mobile" src="assets/mobile_arrow.svg" alt="arrow">
+        </div>
+      </li>
+      <div class="podmenu podmenu_clothes">
+        <p class="podmenu_item">Верхняя одежда</p>
+        <p class="podmenu_item">Платья</p>
+        <p class="podmenu_item">Жакеты</p>
+        <p class="podmenu_item">Костюмы</p>
+        <p class="podmenu_item">Рубашки и блузы</p>
+      </div>
+      <li data-menu-item="3" class="menu_item">
+        <div class="menu_item_content">
+          Аксессуары
+          <img class="menu_item_arrow" src="assets/arrow_forward_ios.svg" alt="arrow">
+          <img class="menu_item_arrow--mobile" src="assets/mobile_arrow.svg" alt="arrow">
+        </div>
+        
+      </li>
+      <div class="podmenu podmenu_access">
+        <p class="podmenu_item">Бейсболки</p>
+        <p class="podmenu_item">Ремни</p>
+        <p class="podmenu_item">Шапки</p>
+      </div>
+      <li data-menu-item="4" class="menu_item">
+        <div class="menu_item_content">
+          Украшения
+          <img class="menu_item_arrow" src="assets/arrow_forward_ios.svg" alt="arrow">
+          <img class="menu_item_arrow--mobile" src="assets/mobile_arrow.svg" alt="arrow">
+        </div>
+        
+      </li>
+      <div class="podmenu podmenu_decor">
+        <p class="podmenu_item">Украшения</p>
+      </div>
+      <li data-menu-item="5" class="menu_item">
+        <div class="menu_item_content">
+          Контакты
+          <img class="menu_item_arrow" src="assets/arrow_forward_ios.svg" alt="arrow">
+          <img class="menu_item_arrow--mobile" src="assets/mobile_arrow.svg" alt="arrow">
+        </div>
+        
+      </li>
+      <div class="podmenu podmenu_contacts">
+        <p class="podmenu_item">Контакты</p>
+      </div>
+      <li data-menu-item="6" class="menu_item">
+        <div class="menu_item_content">
+          Клиентский сервис
+          <img class="menu_item_arrow" src="assets/arrow_forward_ios.svg" alt="arrow">
+          <img class="menu_item_arrow--mobile" src="assets/mobile_arrow.svg" alt="arrow">
+        </div>
+        
+      </li>
+      <div class="podmenu podmenu_client">
+        <p class="podmenu_item">Номера телефонов</p>
+      </div>
+      <div id="menuOpenHover" class="menu_open_hover">
+        <ul class="menu_open_list">
+          <li class="menu_open_item">Верхняя одежда</li>
+          <li class="menu_open_item">Платья</li>
+          <li class="menu_open_item">Жакеты</li>
+          <li class="menu_open_item">Костюмы</li>
+          <li class="menu_open_item">Рубашки и блузы</li>
+          <li class="menu_open_item">Боди и лонгсливы</li>
+          <li class="menu_open_item">Футболки и топы</li>
+          <li class="menu_open_item">Трикотаж</li>
+          <li class="menu_open_item">Джинсы</li>
+          <li class="menu_open_item">Брюки и шорты</li>
+        </ul>
+      </div>
+    </ul>
+    <div class="sign_in">
+      <img src="assets/login.svg" alt="sign in">
+      Войти
+    </div>
   </div>
 
   <main class="main">
@@ -130,34 +231,34 @@
     </section>
     <section class="logos">
       <div class="logo_item">
-        <a href="#"><img class="logo_img" src="assets/monochrome.png" alt="monochrome"></a>
+        <a href="#"><img draggable="false" class="logo_img" src="assets/monochrome.png" alt="monochrome"></a>
       </div>
       <div class="logo_item">
-        <a href="#"><img class="logo_img" src="assets/n97.png" alt="n97"></a>
+        <a href="#"><img draggable="false" class="logo_img" src="assets/n97.png" alt="n97"></a>
       </div>
       <div class="logo_item">
-        <a href="#"><img class="logo_img" src="assets/autentiments.png" alt="autentiments"></a>
+        <a href="#"><img draggable="false" class="logo_img" src="assets/autentiments.png" alt="autentiments"></a>
       </div>
       <div class="logo_item">
-        <a href="#"><img class="logo_img" src="assets/choux.png" alt="choux"></a>
+        <a href="#"><img draggable="false" class="logo_img" src="assets/choux.png" alt="choux"></a>
       </div>
       <div class="logo_item">
-        <a href="#"><img class="logo_img" src="assets/rizzle.png" alt="rizzle"></a>
+        <a href="#"><img draggable="false" class="logo_img" src="assets/rizzle.png" alt="rizzle"></a>
       </div>
       <div class="logo_item">
-        <a href="#"><img class="logo_img" src="assets/nikonorova.png" alt="autentiments"></a>
+        <a href="#"><img draggable="false" class="logo_img" src="assets/nikonorova.png" alt="autentiments"></a>
       </div>
       <div class="logo_item">
-        <a href="#"><img class="logo_img" src="assets/monochrome.png" alt="n97"></a>
+        <a href="#"><img draggable="false" class="logo_img" src="assets/monochrome.png" alt="n97"></a>
       </div>
       <div class="logo_item">
-        <a href="#"><img class="logo_img" src="assets/rizzle.png" alt="rizzle"></a>
+        <a href="#"><img draggable="false" class="logo_img" src="assets/rizzle.png" alt="rizzle"></a>
       </div>
       <div class="logo_item">
-        <a href="#"><img class="logo_img" src="assets/n97.png" alt="n97"></a>
+        <a href="#"><img draggable="false" class="logo_img" src="assets/n97.png" alt="n97"></a>
       </div>
       <div class="logo_item">
-        <a href="#"><img class="logo_img" src="assets/monochrome.png" alt="n97"></a>
+        <a href="#"><img draggable="false" class="logo_img" src="assets/monochrome.png" alt="n97"></a>
       </div>
       
     </section>
@@ -165,56 +266,70 @@
     <section class="novelty">
       <div class="wrapper novelty_wrapper">
         <div class="novelty_title_box">
-          <h1 class="title novelty_title">новинки</h1>
-          <a class="novelty_link" href="#">Смотреть все</a>
-        </div>
-        <div class="novelty_slide">
-          <div class="dots">
-            <img class="dot" src="assets/unfill_dot.svg" alt="dot">
-            <img class="dot" src="assets/fill_dot.svg" alt="dot">
-            <img class="dot" src="assets/unfill_dot.svg" alt="dot">
+          <div class="novelty_title_content">
+            <p class="title">новинки</p>
+            <a href="#" class="novelty_link">
+              Смотреть все
+            </a>
           </div>
-          <div class="novelty_arrows">
-            <div>
-              <img class="arrow arrow--left" src="assets/slide_arrow.jpg" alt="arrow">
+          <div class="novelty_slider_nav">
+            <div class="dots">
             </div>
-            <div>
+            <div class="dots--mobile">
+            </div>
+            <div class="arrows">
+              <img class="arrow arrow--left" src="assets/slide_arrow.jpg" alt="arrow">
               <img class="arrow arrow--right" src="assets/slide_arrow.jpg" alt="arrow">
             </div>
           </div>
         </div>
-      </div>
-      <div class="wrapper novelty_img_wrapper">
-        <div class="slide">
-          <img class="novelty_img" src="assets/novelty_img.png" alt="product">
-          <img class="novelty_img" src="assets/novelty_img1.png" alt="product">
-          <img class="novelty_img" src="assets/novelty_img2.png" alt="product">
-          <img class="novelty_img" src="assets/novelty_img3.png" alt="product">
-        </div>
-        <div class="slide">
-          <img class="novelty_img" src="assets/novelty_img3.png" alt="product">
-          <img class="novelty_img" src="assets/novelty_img2.png" alt="product">
-          <img class="novelty_img" src="assets/novelty_img1.png" alt="product">
-          <img class="novelty_img" src="assets/novelty_img3.png" alt="product">
-        </div>
-        <div class="slide">
-          <img class="novelty_img" src="assets/novelty_img2.png" alt="product">
-          <img class="novelty_img" src="assets/novelty_img3.png" alt="product">
-          <img class="novelty_img" src="assets/novelty_img1.png" alt="product">
-          <img class="novelty_img" src="assets/novelty_img3.png" alt="product">
-        </div>
-      </div>
-      <div class="novelty_slide--mobile">
-        <div class="dots">
-          <img class="dot dot--mobile" src="assets/unfill_dot.svg" alt="dot">
-          <img class="dot dot--mobile" src="assets/fill_dot.svg" alt="dot">
-          <img class="dot dot--mobile" src="assets/unfill_dot.svg" alt="dot">
-        </div>
-        <div class="novelty_arrows">
-          <div>
-            <img class="arrow arrow--left" src="assets/slide_arrow.jpg" alt="arrow">
+        <div class="novelty_slider_box">
+          <div class="slider">
+            <div class="slider_item">
+              <img class="slider_item_photo" src="assets/novelty_img.png" alt="product">
+            </div>
+            <div class="slider_item">
+              <img class="slider_item_photo" src="assets/novelty_img1.png" alt="product">
+            </div>
+            <div class="slider_item">
+              <img class="slider_item_photo" src="assets/novelty_img2.png" alt="product">
+            </div>
+            <div class="slider_item">
+              <img class="slider_item_photo" src="assets/novelty_img3.png" alt="product">
+            </div>
+
+            <div class="slider_item">
+              <img class="slider_item_photo" src="assets/novelty_img3.png" alt="product">
+            </div>
+            <div class="slider_item">
+              <img class="slider_item_photo" src="assets/novelty_img2.png" alt="product">
+            </div>
+            <div class="slider_item">
+              <img class="slider_item_photo" src="assets/novelty_img1.png" alt="product">
+            </div>
+            <div class="slider_item">
+              <img class="slider_item_photo" src="assets/novelty_img.png" alt="product">
+            </div>
+
+            <div class="slider_item">
+              <img class="slider_item_photo" src="assets/novelty_img2.png" alt="product">
+            </div>
+            <div class="slider_item">
+              <img class="slider_item_photo" src="assets/novelty_img1.png" alt="product">
+            </div>
+            <div class="slider_item">
+              <img class="slider_item_photo" src="assets/novelty_img3.png" alt="product">
+            </div>
+            <div class="slider_item">
+              <img class="slider_item_photo" src="assets/novelty_img.png" alt="product">
+            </div>
           </div>
-          <div>
+        </div>
+        <div class="novelty_slider_nav--mobile">
+          <div class="dots--small-mobile">
+          </div>
+          <div class="arrows">
+            <img class="arrow arrow--left" src="assets/slide_arrow.jpg" alt="arrow">
             <img class="arrow arrow--right" src="assets/slide_arrow.jpg" alt="arrow">
           </div>
         </div>
@@ -319,14 +434,30 @@
         
 
         <div class="category--disabled">
-          <a class="link1" href="#"><img class="photo4" src="assets/denim.png" alt="denim"></a>
-          <a class="link2" href="#"><img class="photo1" src="assets/swimwear.png" alt="t-shirts"></a>
-          <a class="link3" href="#"><img class="photo2" src="assets/dressed.png" alt="decorations"></a>
-          <a class="link4" href="#"><img class="photo5" src="assets/dressed.png" alt="dressed"></a>
-          <a class="link5" href="#"><img class="photo3" src="assets/t-shirts.png" alt="swimwear"></a>
-          <a class="link6" href="#"><img class="photo2" src="assets/denim.png" alt="decorations"></a>
-          <a class="link7" href="#"><img class="photo5" src="assets/dressed.png" alt="dressed"></a>
-          <a class="link8" href="#"><img class="photo3" src="assets/t-shirts.png" alt="swimwear"></a>
+          <div class="link_container">
+            <a class="link1" href="#"><img class="photo4 photo" src="assets/denim.png" alt="denim"></a>
+          </div>
+          <div class="link_container">
+            <a class="link2" href="#"><img class="photo4" src="assets/swimwear.png" alt="denim"></a>
+          </div>
+          <div class="link_container">
+            <a class="link3" href="#"><img class="photo4" src="assets/dressed.png" alt="denim"></a>
+          </div>
+          <div class="link_container">
+            <a class="link4" href="#"><img class="photo4" src="assets/dressed.png" alt="denim"></a>
+          </div>
+          <div class="link_container">
+            <a class="link5" href="#"><img class="photo4" src="assets/t-shirts.png" alt="denim"></a>
+          </div>
+          <div class="link_container">
+            <a class="link6" href="#"><img class="photo4" src="assets/denim.png" alt="denim"></a>
+          </div>
+          <div class="link_container">
+            <a class="link7" href="#"><img class="photo4" src="assets/dressed.png" alt="denim"></a>
+          </div>
+          <div class="link_container">
+            <a class="link8" href="#"><img class="photo4" src="assets/t-shirts.png" alt="denim"></a>
+          </div>
         </div>
         <div>
           <button class="actual_btn">СМОТРЕТЬ ВСЕ</button>
@@ -397,5 +528,8 @@
   <script src="./js/main.js"></script>
   <script src="./js/actual_slider.js"></script>
   <script src="./js/modalLK.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="js/slider.js"></script>
 </body>
 </html>

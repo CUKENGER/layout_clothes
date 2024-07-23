@@ -1,7 +1,7 @@
 
 .header{
   position: fixed;
-  z-index: 1000;
+  z-index: 900;
   background-color: white;
   width: 100%;
   transition: box-shadow 0.3s;
@@ -37,9 +37,12 @@
 }
 
 .menu{
-  cursor: pointer;
   display: flex;
   justify-content: flex-start;
+}
+
+.menu_onClick{
+  cursor: pointer;
 }
 
 .nav_list {
@@ -104,6 +107,14 @@
   cursor: pointer;
 }
 
+.menu-wrapper {
+  width: 100px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  cursor: pointer;
+}
 
 .menu-btn {
   display: block;
@@ -157,7 +168,8 @@
   top: 0px;
 }
 
-.menu-btn.open:after {
+.menu-btn.open:after,
+.menu-btn.open:before {
   transform: rotate(90deg);
   width: 30px;
 }
@@ -167,6 +179,10 @@
 @media(max-width:720px) {
   .logo{
     margin: 0;
+  }
+
+  .menu-wrapper{
+    justify-content:flex-start;
   }
 
   .menu{
@@ -216,6 +232,7 @@
   .nav_list{
     column-gap: 5px;
   }
+
   .logo{
     width: 130px;
   }
@@ -236,7 +253,7 @@
 
   .menu-btn,
   .menu-btn:after{
-    width: 20px;
+    width: 30px;
     height: 2px;
   }
 }

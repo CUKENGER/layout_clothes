@@ -1,7 +1,5 @@
 
-.categories{
-  display: none;
-}
+
 
 .actual_title{
   color: #8C8C8C;
@@ -39,12 +37,33 @@
     "link4 link4 link5 link5";
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  grid-auto-rows: 1fr;
   grid-gap: 18px;
 }
 
-.photo_container{
+.link_container{
+  overflow: hidden; /* Скрыть части изображения, выходящие за пределы блока */
   position: relative;
+  height: calc((100vw / 6));
 }
+
+.link_container a img {
+  position: absolute; /* Абсолютное позиционирование для картинки */
+  top: 50%; /* Центрируем по вертикали */
+  left: 50%; /* Центрируем по горизонтали */
+  width: auto; /* Автоматическая ширина */
+  height: auto; /* Автоматическая высота */
+  max-width: none; /* Убираем ограничения по ширине */
+  max-height: none; /* Убираем ограничения по высоте */
+  transform: translate(-50%, -50%); /* Центрируем изображение */
+  transition: transform 0.3s ease; 
+}
+
+
+.link_container:hover a img {
+  transform: translate(-50%, -50%) scale(1.05); /* Увеличиваем изображение при наведении */
+}
+
 
 .photo_text{
   text-transform: uppercase;
@@ -58,10 +77,14 @@
   color: white;
 }
 
-.category a img{
+.category div a img{
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.categories{
+  display: none;
 }
 
 .categories--active0 {
@@ -71,6 +94,7 @@
     "link3 link4 link5";
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  grid-auto-rows: 1fr;
   grid-gap: 18px;
 }
 
@@ -81,6 +105,7 @@
     "link3 link4 link5";
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  grid-auto-rows: 1fr;
   grid-gap: 18px;
 }
 
@@ -91,6 +116,7 @@
     "link3 link1 link5";
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  grid-auto-rows: 1fr;
   grid-gap: 18px;
 }
 
@@ -120,28 +146,73 @@
   margin-bottom: 20px;
 }
 
+.photo_container{
+  overflow: hidden; /* Скрыть части изображения, выходящие за пределы блока */
+  position: relative; /* Устанавливаем позиционирование */
+  height: 330px;
+  width: 100%;
+}
+
+.photo_container a img {
+  position: absolute; /* Абсолютное позиционирование для картинки */
+  top: 50%; /* Центрируем по вертикали */
+  left: 50%; /* Центрируем по горизонтали */
+  width: auto; /* Автоматическая ширина */
+  height: auto; /* Автоматическая высота */
+  max-width: none; /* Убираем ограничения по ширине */
+  max-height: none; /* Убираем ограничения по высоте */
+  transform: translate(-50%, -50%); /* Центрируем изображение */
+  transition: transform 0.3s ease; /* Плавный переход */
+}
+
+.photo_container:hover a img {
+  transform: translate(-50%, -50%) scale(1.05); /* Увеличиваем изображение при наведении */
+}
+
 .photo,
 .photo1,
 .photo2,
 .photo3,
 .photo4,
 .photo5{
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 
-
-.photo:hover,
-.photo1:hover,
-.photo2:hover,
-.photo3:hover,
-.photo4:hover,
-.photo5:hover{
-  transform: scale(1.05);
+@media(max-width:1234px){
+  .photo_container{
+    height: 280px;
+  }
 }
+
+@media(max-width:1064px){
+  .photo_container{
+    height: 250px;
+  }
+}
+
+@media(max-width:954px){
+  .photo_container{
+    height: 220px;
+  }
+}
+
+@media(max-width:837px){
+  .photo_container{
+    height: 190px;
+  }
+}
+
 
 @media(max-width:814px) {
   .actual_title{
     font-size: 1.5rem;
+  }
+}
+
+@media(max-width:743px){
+  .photo_container{
+    height: 170px;
   }
 }
 
@@ -169,6 +240,26 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
   }
+
+  .photo_container{
+    height: 242px;
+  }
+
+  .link_container{
+    height: calc((100vw / 3));
+  }
+}
+
+@media(max-width:621px) {
+  .photo_container{
+    height: 220px;
+  }
+}
+
+@media(max-width:575px) {
+  .photo_container{
+    height: 190px;
+  }
 }
 
 @media(max-width:517px) {
@@ -186,11 +277,42 @@
   }
 }
 
+@media(max-width:505px) {
+  .photo_container{
+    height: 165px;
+  }
+}
+
+@media(max-width:445px) {
+  .photo_container{
+    height: 145px;
+  }
+}
+
 @media(max-width:428px) {
   .actual_title{
     font-size: 1rem;
   }
 }
+
+@media(max-width:402px) {
+  .photo_container{
+    height: 135px;
+  }
+}
+
+@media(max-width:402px) {
+  .photo_container{
+    height: 125px;
+  }
+}
+
+@media(max-width:351px) {
+  .photo_container{
+    height: 105px;
+  }
+}
+
 
 @media(max-width:370px) {
   .actual_title{
